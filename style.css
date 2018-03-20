@@ -1,0 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="txt/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+.body{
+  background-color:rgba(260,260,0,0.5);
+}
+.font{
+  font-size:15px;
+  font-weight: bold;
+  font-style: oblique;
+  color: inherit;
+}
+.img-fluid{
+  width: 100%;
+  height: 400px;
+display: none;
+}
+.font-color{
+  color: #FFFFFF;
+}
+h1{
+  text-shadow: 2px 2px 4px #000000;
+}
+span{
+  color: red;
+}

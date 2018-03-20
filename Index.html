@@ -1,0 +1,338 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="txt/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="txt/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+<script src="https://js/Bootstrap/Select/bootstrap-select.js"></script>-->
+<title>myOrder</title>
+<head>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<script src="javaScript.js"></script>
+<style>
+</style>
+<body class="body" style="background-color:#FFA07A;">
+  <div class="container">
+    <div class="row">
+      <center><img src="BabylonQithara.png" class="img-fluid" alt="resposive image"></center></div>
+      <div class="center-text"><h1 style="display-none;" class="font-color text-center"id="text1">Get your dinner from Babylon Qithara<h1></div>
+        <form action="mainPage.php" method="post">
+          <div class="form-group">
+            <label for="email">Email address:</lable>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="text">What is your first and last name?</lable>
+                <input type="text" value="" class="form-control" id="text" name="userName" placeholder="First name and Last name">
+              </div>
+              <!--<div><img src="Menu-1.jpg"  alt="responsive image"></div>-->
+              <div class="container">
+                <h2 class="text-center">Adult meal (Regular size 8inch)</h2>
+              </div>
+              <div class="row">
+                <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                  <div class="form-group">
+                    <label>
+                      <li value="ch">Regular Chicken shawarma wrap</li>
+                    </label>
+                   <select id="picker" class="selectpicker">
+                      <?php
+                      for($x=1;$x<=5;$x++){
+                        echo '<option>'.$x.'</option>';
+                      }
+                      ?>
+                      <!--<option></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>-->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                  <div class="form-group">
+                    <label>
+                      <li vlaue="Do">Regular Beef Donair wrap</li>
+                    </label>
+                    <select class="selectpicker">
+                      <option></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                  <div class="form-group">
+                    <label>
+                      <li>Regular Beef Kabab wrap</li>
+                    </label>
+                    <select class="selectpicker">
+                      <option></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                  <div class="form-group">
+                    <label>
+                      <li>Regular Falafel wrap</li>
+                    </label>
+                    <select class="selectpicker">
+                      <option></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+              </div>
+
+              <div>
+                <div class="container">
+                  <h2 class="text-center">Adult meal (Large size 10inch)</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li value="ch">Large Chicken shawarma wrap</li>
+                      </label>
+                      <select id="picker" class="selectpicker">
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li vlaue="Do">Large Beef Donair wrap</li>
+                      </label>
+                      <select class="selectpicker">
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li>Large Beef Kabab wrap</li>
+                      </label>
+                      <select class="selectpicker">
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li>Large Falafel wrap</li>
+                      </label>
+                      <select class="selectpicker">
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="container">
+                    <div class="form-group">
+                      <label for="comment">Comment:</label>
+                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                  <h2 class="text-center">Kids meal</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li>Chicken strips</li>
+                      </label>
+                      <select class="selectpicker">
+                        <<option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li>Hot dogs</li>
+                      </label>
+                      <select class="selectpicker">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li>Beef Burger</li>
+                      </label>
+                      <select class="selectpicker">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                  </div>
+                </div>
+                <h2 id="check" class="text-center">Drinks</h2>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <label>
+                      <input type="checkbox"> Pepsi
+                    </label>
+                    <select class="selectpicker">
+                      <option></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <label>
+                      <input type="checkbox"> Coke
+                    </label>
+                      <select class="selectpicker">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <label>
+                        <input type="checkbox" >Diet Coke
+                      </label>
+                        <select class="selectpicker">
+                          <option></option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-5">
+                        <label>
+                          <input type="checkbox" >Coke Zero</label>
+                          <select class="selectpicker">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-5">
+                          <label>
+                            <input type="checkbox" >Sprite
+                          </label>
+                          <select class="selectpicker">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <!--<input type="submit" id="submit" class="form-control" value="Submit">-->
+                    <div><input id="submit" type="button" class="btn btn-success btn-lg" value="submit"/>
+                      <input type="reset" class="btn btn-success btn-lg" value="reset"/></div>
+                    </div>
+
+                  </form>
+                </body>
+                <?php
+
+
+
+                ?>
