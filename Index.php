@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="cssanimation/cssanimation.css">
 <script src="javaScript.js"></script>
+<script src="myBill.js"></script>
 <head>
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -21,7 +21,9 @@
   margin-bottom: 0;
   border-radius: 0;
   padding-bottom: 20px;
-
+}
+table, th, td{
+  border: 1px solid black;
 }
 .logo-img{
   float: left;
@@ -62,19 +64,17 @@
       </div>
     </nav>
   </div>
-
   <div class="container" style="margin-top:90px" id="home">
     <div class="row">
       <center><img id="img" src="Image-1.jpg" class="img-fluid" alt="resposive image"></center></div>
       <div class="center-text">
         <h1 style="display-none;" class="font-color text-center">Get your dinner from Babylon Qithara<h1>
         </div>
-
         <form action="connect.php" method="post" onsubmit="return confirm('Do you really want to submit the form?');">
           <div class="form-group">
             <label for="email">Email address:</lable>
               <input type="email" name="email" class="form-control" id="email" required="required"
-              placeholder="Email">
+              placeholder="Email" value="">
               <!--  <span><?php echo $emailError; ?></span>-->
             </div>
             <div class="form-group">
@@ -86,6 +86,7 @@
               <!--<div><img src="Menu-1.jpg"  alt="responsive image"></div>-->
               <div id="adultorder" class="container" >
                 <h2 class="text-center">Adult meal (Please order from this manu)</h2>
+          <!--adult manue table start-->
                 <table class="table table-sm table-dark">
                   <thead>
                     <tr>
@@ -133,6 +134,7 @@
                     </tr>
                   </tbody>
                 </table>
+            <!--adult manue table end-->
               </div>
             </div>
             <div class="container">
@@ -141,9 +143,9 @@
                 <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
                   <div class="form-group">
                     <label>
-                      <li value="ch">Regular Chicken shawarma wrap</li>
+                      <li >Regular Chicken shawarma wrap</li>
                     </label>
-                    <select class="selectpicker" name="r_chicken">
+                    <select class="selectpicker" name="r_chicken" id="regular_chicken">
                       <!--<?php
                       //for($x="";$x<=5;$x++){
                       //echo '<option>'.$x.'</option>';
@@ -162,9 +164,25 @@
                 <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
                   <div class="form-group">
                     <label>
+                      <li vlaue="Do">Regular Beef Shawarma wrap</li>
+                    </label>
+                    <select class="selectpicker" name="r_beefShawarma" id="r_beefShawarma">
+                      <?php
+                      for($x="";$x<=5;$x++){
+                        echo '<option>'.$x.'</option>';
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                  <div class="form-group">
+                    <label>
                       <li vlaue="Do">Regular Beef Donair wrap</li>
                     </label>
-                    <select class="selectpicker" name="r_beefDonair">
+                    <select class="selectpicker" name="r_beefDonair" id="regular_donair">
                       <?php
                       for($x="";$x<=5;$x++){
                         echo '<option>'.$x.'</option>';
@@ -180,7 +198,7 @@
                     <label>
                       <li>Regular Beef Kabab wrap</li>
                     </label>
-                    <select class="selectpicker"name="r_beefKabab">
+                    <select class="selectpicker"name="r_beefKabab" id="regular_kabab">
                       <?php
                       for($x="";$x<=5;$x++){
                         echo '<option>'.$x.'</option>';
@@ -196,7 +214,7 @@
                     <label>
                       <li>Regular Falafel wrap</li>
                     </label>
-                    <select class="selectpicker"name="r_falafel">
+                    <select class="selectpicker"name="r_falafel" id="regular_falafel">
                       <?php
                       for($x="";$x<=5;$x++){
                         echo '<option>'.$x.'</option>';
@@ -221,7 +239,23 @@
                       <label>
                         <li value="ch">Large Chicken shawarma wrap</li>
                       </label>
-                      <select class="selectpicker"name="l_chicken">
+                      <select class="selectpicker"name="l_chicken" id="l_chicken">
+                        <?php
+                        for($x="";$x<=5;$x++){
+                          echo '<option>'.$x.'</option>';
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li vlaue="Do">Large Beef Shawarma wrap</li>
+                      </label>
+                      <select class="selectpicker" name="l_beefShawarma" id="l_beefShawarma">
                         <?php
                         for($x="";$x<=5;$x++){
                           echo '<option>'.$x.'</option>';
@@ -237,7 +271,7 @@
                       <label>
                         <li vlaue="Do">Large Beef Donair wrap</li>
                       </label>
-                      <select class="selectpicker" name="l_beefDonair">
+                      <select class="selectpicker" name="l_beefDonair" id="l_beefDonair">
                         <?php
                         for($x="";$x<=5;$x++){
                           echo '<option>'.$x.'</option>';
@@ -253,7 +287,7 @@
                       <label>
                         <li>Large Beef Kabab wrap</li>
                       </label>
-                      <select class="selectpicker" name="l_beefKabab">
+                      <select class="selectpicker" name="l_beefKabab" id="l_beefKabab">
                         <?php
                         for($x="";$x<=5;$x++){
                           echo '<option>'.$x.'</option>';
@@ -269,7 +303,23 @@
                       <label>
                         <li>Large Falafel wrap</li>
                       </label>
-                      <select class="selectpicker"name="l_falafel">
+                      <select class="selectpicker"name="l_falafel" id="l_falafel">
+                        <?php
+                        for($x="";$x<=5;$x++){
+                          echo '<option>'.$x.'</option>';
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
+                    <div class="form-group">
+                      <label>
+                        <li>Large Chicken Shawarma Salad</li>
+                      </label>
+                      <select class="selectpicker"name="l_ch_salad" id="l_ch_salad">
                         <?php
                         for($x="";$x<=5;$x++){
                           echo '<option>'.$x.'</option>';
@@ -315,12 +365,10 @@
                       <label>
                         <li>Chicken strips</li>
                       </label>
-                      <select class="selectpicker" name="strips">
+                      <select class="selectpicker" name="strips" id="strips">
                         <?php
-                        $x="";
-                        while ($x <= 5) {
-                          echo "<option>".$x."</option>";
-                          $x++;
+                        for($x="";$x<=5;$x++){
+                          echo '<option>'.$x.'</option>';
                         }
                         ?>
                       </select>
@@ -333,12 +381,10 @@
                       <label>
                         <li>Hotdog</li>
                       </label>
-                      <select class="selectpicker"name="hotdog">
+                      <select class="selectpicker" name="hotdog" id="hotdog">
                         <?php
-                        $x="";
-                        while ($x <= 5) {
-                          echo "<option>".$x."</option>";
-                          $x++;
+                        for($x="";$x<=5;$x++){
+                          echo '<option>'.$x.'</option>';
                         }
                         ?>
                       </select>
@@ -351,12 +397,10 @@
                       <label>
                         <li>Beef Burger</li>
                       </label>
-                      <select class="selectpicker"name="burger">
+                      <select class="selectpicker" name="burger" id="burger">
                         <?php
-                        $x="";
-                        while ($x <= 5) {
-                          echo "<option>".$x."</option>";
-                          $x++;
+                        for($x="";$x<=5;$x++){
+                          echo '<option>'.$x.'</option>';
                         }
                         ?>
                       </select>
@@ -390,7 +434,8 @@
                     <div class="container">
                     <div class="row">
                       <div class="col-md-2"><strong>Pepsi</strong></div>
-                      <div class="col-md-4"><select class="selectpicker" name="pepsi">
+                      <div class="col-md-4">
+                        <select class="selectpicker" name="pepsi" id="pepsi">
                         <?php
                         $x="";
                         while ($x <= 5) {
@@ -406,7 +451,8 @@
                   </label>-->
                   <div class="row">
                     <div class="col-md-2"><strong>Coke</strong></div>
-                    <div class="col-md-4"><select class="selectpicker" name="coke">
+                    <div class="col-md-4">
+                      <select class="selectpicker" name="coke" id="coke">
                       <?php
                       $x="";
                       while ($x <= 5) {
@@ -423,7 +469,7 @@
               </label>-->
               <div class="row">
                 <div class="col-md-2"><strong>Dite coke</strong></div>
-                <div class="col-md-4"><select class="selectpicker"name="ditecoke">
+                <div class="col-md-4"><select class="selectpicker"name="ditecoke" id="ditecoke">
                   <?php
                   $x="";
                   while ($x <= 5) {
@@ -439,7 +485,7 @@
             <input type="checkbox" name="drinks[]" value="coke zero">Coke Zero</label>-->
             <div class="row">
               <div class="col-md-2"><strong>Coke zero</strong></div>
-              <div class="col-md-4"><select class="selectpicker" name="cokezero">
+              <div class="col-md-4"><select class="selectpicker" name="cokezero" id="cokezero">
                 <option></option>
                 <option>1</option>
                 <option>2</option>
@@ -454,7 +500,8 @@
         </label>-->
         <div class="row">
           <div class="col-md-2"><strong>Sprite</strong></div>
-          <div class="col-md-4"><select class="selectpicker"name="sprite">
+          <div class="col-md-4">
+            <select class="selectpicker" name="sprite" id="sprite">
             <option></option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -467,6 +514,7 @@
     <br>
 <div class="container" id="appetizers">
   <h2 class="text-center">Appetizers</h2>
+  <!-- Appetizers table start-->
   <table class="table table-sm table-dark">
     <tbody>
       <tr>
@@ -487,28 +535,30 @@
       </tr>
     </tbody>
   </table>
-  <strong>Tabule Salad</strong><select class="selectpicker" name="cokezero">
+  <!--Appetizers table end-->
+    </table>
+  <strong>Tabule Salad</strong><select class="selectpicker" name="tabule" id="tabule">
     <option></option>
     <option>1</option>
     <option>2</option>
     <option>3</option>
     <option>4</option>
   </select>
-  <strong>Hummus</strong><select class="selectpicker" name="cokezero">
+  <strong>Hummus</strong><select class="selectpicker" name="hummus" id="hummus">
     <option></option>
     <option>1</option>
     <option>2</option>
     <option>3</option>
     <option>4</option>
   </select>
-  <strong>Fattoush Salad</strong><select class="selectpicker" name="cokezero">
+  <strong>Fattoush Salad</strong><select class="selectpicker" name="fattoush" id="fattoush">
     <option></option>
     <option>1</option>
     <option>2</option>
     <option>3</option>
     <option>4</option>
   </select>
-  <strong>Tzatziki</strong><select class="selectpicker" name="cokezero">
+  <strong>Tzatziki</strong><select class="selectpicker" name="tzatziki" id="tzatziki">
     <option></option>
     <option>1</option>
     <option>2</option>
@@ -524,16 +574,21 @@
 <div class="row">
   <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
     <div class="form-group">
-      <!--<input type="submit" id="submit" class="form-control" value="Submit">-->
-      <div><input type="submit" name="btn" class="btn btn-success btn-lg" value="submit">
-
+      <button name="btn" class="btn btn-lg" onclick="regularChicken()"> My Bill</button>
+        <p id="demo"></p>
+          <table id="myTable">
+          </table>
+      Sub Total<input type="text" id="subTotal" class="form-control" value="" disabled>
+      Tax: <input type="text" id="tax" class="form-control" value="" disabled>
+      Total:<input type="text" name="totalPrice" id="total" class="form-control" value="" disabled>
+    </div>
+      <div><input type="submit" name="btn" class="btn btn-success btn-lg" id="submit" value="submit">
         <input type="reset" class="btn btn-success btn-lg"  value="reset"/></div>
       </div>
-    </div>
   </div>
 </div>
 </form>
-<!-- <?php
+  <!-- <?php
 include_once("mainPage.php");
 ?>  -->
 </body>

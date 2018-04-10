@@ -23,3 +23,19 @@ $('#check').css({
 $('body').find("h2").css({"color":"red"});
 $('.scrolly').scrolly();
 });
+$(document).ready(function(){
+  ('#submit').click(function(e){
+    event.preventDefault();
+    var userName= $("#text").val();
+    var email = $("#email").val();
+    var totalPrice =('#total').val();
+    $.ajax({
+    url: "connect.php",
+    method:"post",
+    data:{userName:userName, email:email, totalPrice:totalPrice},
+    success: function(result){
+      alert(result);
+    }
+  })
+});
+});
