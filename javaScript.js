@@ -1,16 +1,12 @@
 
 $(function(){
-  $('#email').focus(function(){
+  $('#email').focus(function(){ //input email
     $(this).css("background-color","orange");
-    $('input').blur(function(){
+    $('input').blur(function(){ //input name
       $(this).css("background-color","white");
     });
   });
-  $('#text1').fadeIn(7000);
-  /*$('.img-fluid').animate({height:'300px',opacity:'0.4'},2000);
-  $('.img-fluid').animate({width:'300px',opacity:'0.8'},2000);
-  $('.img-fluid').animate({height:'300px',opacity:'0.4'},2000);
-  $('.img-fluid').animate({width:'1100px',opacity:'0.8'},2000);*/
+  //$('#text1').fadeIn(30);
   $('.img-fluid').show(2000,function(){
     $('#img').css({"max-width":"100%","box-shadow":" 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
   });
@@ -22,20 +18,4 @@ $('#check').css({
   "size":"20px"});
 $('body').find("h2").css({"color":"red"});
 $('.scrolly').scrolly();
-});
-$(document).ready(function(){
-  ('#submit').click(function(e){
-    event.preventDefault();
-    var userName= $("#text").val();
-    var email = $("#email").val();
-    var totalPrice =('#total').val();
-    $.ajax({
-    url: "connect.php",
-    method:"post",
-    data:{userName:userName, email:email, totalPrice:totalPrice},
-    success: function(result){
-      alert(result);
-    }
-  })
-});
 });

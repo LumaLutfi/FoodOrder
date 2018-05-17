@@ -574,14 +574,20 @@ table, th, td{
 <div class="row">
   <div class="col-md-6" style="width:100%;margin-bottom: 10px;">
     <div class="form-group">
-      <button name="btn" class="btn btn-lg" onclick="regularChicken()"> My Bill</button>
+      <button name="button" class="btn btn-lg" onclick="myBill()"> My Bill</button>
         <p id="demo"></p>
           <table id="myTable">
           </table>
-      Sub Total<input type="text" id="subTotal" class="form-control" value="" disabled>
+      Sub Total:<input type="text" id="subTotal" class="form-control" value="" disabled>
       Tax: <input type="text" id="tax" class="form-control" value="" disabled>
       Total:<input type="text" name="totalPrice" id="total" class="form-control" value="" disabled>
     </div>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
       <div><input type="submit" name="btn" class="btn btn-success btn-lg" id="submit" value="submit">
         <input type="reset" class="btn btn-success btn-lg"  value="reset"/></div>
       </div>

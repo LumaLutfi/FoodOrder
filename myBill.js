@@ -1,5 +1,5 @@
 
-function regularChicken(){
+function myBill(){
   var x1=document.getElementById("email").value;
   var x2=document.getElementById("text").value;
 document.getElementById("demo").innerHTML =x1 + "<br>" + x2 + "<br>"+ Date();
@@ -40,7 +40,7 @@ var x20=document.getElementById("hummus").value;
 var x22=document.getElementById("tzatziki").value;
 var p11 = 4.00;
 var x21=document.getElementById("fattoush").value;
-var p12 = 6.00
+var p12 = 6.00;
  if (x3||xb3||x4||x5||x6||x7||xb7||x8||x9||x10||xs10||x11||x12||x13||x14||x15||x16||x17||x18||x19||x20||x21||x22){
   t_r_ch=x3*p1;
   t_r_b_sh=xb3*pb1; //regular_beefShawarma
@@ -66,9 +66,9 @@ var p12 = 6.00
   var cell1 = row1.insertCell(0);
   var cell2 = row1.insertCell(1);
   var cell3 = row1.insertCell(2);
-  cell1.innerHTML = "Quantity";
-  cell2.innerHTML = "Discreption";
-  cell3.innerHTML = "Price";
+  cell1.innerHTML = "<h4> Quantity </h4>";
+  cell2.innerHTML = "<h4> Discreption </h4>";
+  cell3.innerHTML = "<h4> Price </h4>";
   var row2 = table.insertRow(1);
   var cell1 = row2.insertCell(0);
   var cell2 = row2.insertCell(1);
@@ -230,11 +230,13 @@ var p12 = 6.00
   cell1.innerHTML = x22;
   cell2.innerHTML = " Tzatziki";
   cell3.innerHTML = t_tzatziki;
-    subTotal= (t_r_ch +t_r_b_sh+t_r_b_d+t_r_b_k+t_r_f+t_l_ch+t_l_b_sh+t_l_b_d+t_l_b_k+t_l_f+t_l_ch_s+t_s+t_h+t_b+
+  subTotal= 0.0;
+    subTotal= subTotal+ (t_r_ch +t_r_b_sh+t_r_b_d+t_r_b_k+t_r_f+t_l_ch+t_l_b_sh+t_l_b_d+t_l_b_k+t_l_f+t_l_ch_s+t_s+t_h+t_b+
     (x14*p10)+(x15*p10)+(x16*p10)+(x17*p10)+(x18*p10)+t_tabule+t_hummus+t_tzatziki+t_fattoush);
-  tax =Math.round(subTotal * 0.05, 2);
+  tax =subTotal * 0.05;
+
  document.getElementById("subTotal").value="SubTotal= "+ "$"+subTotal;
- document.getElementById("tax").value="Tax= "+"$"+tax;
+ document.getElementById("tax").value="Tax= "+"$"+tax.toFixed(2);
  document.getElementById("total").value ="Total= "+"$"+(subTotal + tax);
 }else {
   document.getElementById("demo26").innerHTML="Nothing to choose";
